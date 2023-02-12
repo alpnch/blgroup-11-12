@@ -69,3 +69,91 @@
 // };
 
 // console.log(findName("anna"));
+
+// FizzBuzz
+// Потрібно написати функцію, що виводить у консоль числа від 1 до n, де n - це ціле число, яка функція приймає як параметр, з такими умовами:
+
+// виведення fizz замість чисел, кратних 3;
+// виведення buzz замість чисел, кратних 5;
+// виведення fizzbuzz замість чисел, кратних як 3, і 5.
+
+// example 5
+
+// function fizzbuz(number) {
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       console.log(`fizzbizz`);
+//     } else if (i % 3 === 0) {
+//       console.log(`fiz`);
+//     } else if (i % 5 === 0) {
+//       console.log(`buzz`);
+//     } else {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// fizzbuz(35);
+
+// Пошук голосних
+
+// Потрібно написати функцію, яка приймає рядок як аргумент і повертає кількість голосних, які містяться в рядку.
+// Голосними є "a", "e", "i", "o", "u".
+
+// example 6
+
+// function count(str) {
+//   const golos = ["a", "e", "i", "o", "u"];
+//   let countGolos = 0;
+
+//   for (let char of str.toLowerCase()) {
+//     if (golos.includes(char)) {
+//       countGolos++;
+//     }
+//   }
+//   return console.log(countGolos);
+// }
+// count(`SpAcE`);
+// example 7
+// Напишіть ф-цію calcTotalPrice(stones, stonesName),
+// яка приймає масив об'єктів та
+// рядок під назвою каменю.
+// Функція  повертає загальну вартість каменів
+// з таким ім'ям, ціною та кількістю з об'єкта
+// const stones = [
+//   { name: "Изумруд", price: 1300, quantity: 4 },
+//   { name: "Бриллиант", price: 2700, quantity: 6 },
+//   { name: "Сапфир", price: 400, quantity: 7 },
+//   { name: "Щебень", price: 150, quantity: 100 },
+// ];
+
+// function calcTotalPrice(stones, stonesName) {
+//   let totalPrice = 0;
+//   for (let stone of stones) {
+//     console.log(stone);
+//     if (stone.name === stonesName) {
+//       totalPrice = stone.price * stone.quantity;
+//     }
+//   }
+//   return console.log(totalPrice);
+// }
+
+// calcTotalPrice(stones, `Щебень`);
+
+//TODO:===========================
+// Створіть масив styles з елементами «Джаз» та «Блюз».
+//Додайте "Рок-н-рол" в кінець.
+// Замініть значення "Блюз" на "Класика".
+//Видалить перший елемент масиву і виведіть його в консоль.
+//Вставте «Реп» і «Реггі» на початок масиву.
+
+// example 8
+// const style = [`Джаз`, `Блюз`];
+
+// style.push("Рок-н-рол");
+// console.log(style); // джаз блюз рок-н-ролл
+// style.splice(1, 1, "Класика");
+// console.log(style); // 'Джаз', 'Класика', 'Рок-н-рол'
+// console.log(style.splice(0, 1)); //
+// style.splice(0, 0, `Реп`, `Реггі`);
+// console.log(style);
