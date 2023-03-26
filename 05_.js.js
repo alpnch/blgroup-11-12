@@ -128,95 +128,95 @@
 //їх тип та особливості в DOM.
 // Додати до списку клас animalList.На елемент списку animalElement
 
-class Animal {
-  constructor(name, type) {
-    this.name = name;
-    this.type = type;
-  }
-  getInfo() {
-    return `Name: ${this.name}, Type: ${this.type}`;
-  }
-}
+// class Animal {
+//   constructor(name, type) {
+//     this.name = name;
+//     this.type = type;
+//   }
+//   getInfo() {
+//     return `Name: ${this.name}, Type: ${this.type}`;
+//   }
+// }
 
-class Bird extends Animal {
-  constructor(name, type, color) {
-    super(name, type);
-    this.color = color;
-  }
+// class Bird extends Animal {
+//   constructor(name, type, color) {
+//     super(name, type);
+//     this.color = color;
+//   }
 
-  getInfo() {
-    return `${super.getInfo()}, Color: ${this.color}`;
-  }
-}
+//   getInfo() {
+//     return `${super.getInfo()}, Color: ${this.color}`;
+//   }
+// }
 
-class Hunter extends Animal {
-  constructor(name, type, teeth) {
-    super(name, type);
-    this.teeth = teeth;
-  }
+// class Hunter extends Animal {
+//   constructor(name, type, teeth) {
+//     super(name, type);
+//     this.teeth = teeth;
+//   }
 
-  getInfo() {
-    return `${super.getInfo()}, Teeth: ${this.teeth}`;
-  }
-}
+//   getInfo() {
+//     return `${super.getInfo()}, Teeth: ${this.teeth}`;
+//   }
+// }
 
-class Zoo {
-  constructor() {
-    this.animals = [];
+// class Zoo {
+//   constructor() {
+//     this.animals = [];
 
-    this.zooWrapper = document.querySelector(".zooWrapper");
+//     this.zooWrapper = document.querySelector(".zooWrapper");
 
-    this.listAnimals = document.createElement("ul");
-  }
+//     this.listAnimals = document.createElement("ul");
+//   }
 
-  markup() {
-    this.animals.forEach((animal) => {
-      const animalElement = document.createElement("li");
-      const animalName = document.createElement("p");
-      const animalType = document.createElement("p");
-      const animalDesc = document.createElement("p");
+//   markup() {
+//     this.animals.forEach((animal) => {
+//       const animalElement = document.createElement("li");
+//       const animalName = document.createElement("p");
+//       const animalType = document.createElement("p");
+//       const animalDesc = document.createElement("p");
 
-      animalName.textContent = `name ${animal.name}`;
-      animalType.textContent = `type ${animal.type}`;
+//       animalName.textContent = `name ${animal.name}`;
+//       animalType.textContent = `type ${animal.type}`;
 
-      if (animal.teeth) {
-        animalDesc.textContent = `teeth ${animal.teeth}`;
-      }
-      if (animal.color) {
-        animalDesc.textContent = `color ${animal.color}`;
-      }
+//       if (animal.teeth) {
+//         animalDesc.textContent = `teeth ${animal.teeth}`;
+//       }
+//       if (animal.color) {
+//         animalDesc.textContent = `color ${animal.color}`;
+//       }
 
-      animalElement.append(animalName, animalType, animalDesc);
-      animalElement.classList.add("animalElement");
+//       animalElement.append(animalName, animalType, animalDesc);
+//       animalElement.classList.add("animalElement");
 
-      this.listAnimals.append(animalElement);
-      this.listAnimals.classList.add("animalList");
+//       this.listAnimals.append(animalElement);
+//       this.listAnimals.classList.add("animalList");
 
-      this.zooWrapper.append(this.listAnimals);
-    });
-  }
+//       this.zooWrapper.append(this.listAnimals);
+//     });
+//   }
 
-  addAnimal(animal) {
-    this.animals.push(animal);
-  }
+//   addAnimal(animal) {
+//     this.animals.push(animal);
+//   }
 
-  listAnimals() {
-    this.animals.forEach((animal) => {
-      console.log(animal.getInfo());
-    });
-  }
-}
+//   listAnimals() {
+//     this.animals.forEach((animal) => {
+//       console.log(animal.getInfo());
+//     });
+//   }
+// }
 
-const sparrow = new Bird("orange", "street", "grey");
+// const sparrow = new Bird("orange", "street", "grey");
 
-const zoo = new Zoo();
+// const zoo = new Zoo();
 
-zoo.addAnimal(sparrow);
+// zoo.addAnimal(sparrow);
 
-const tiger = new Hunter("boy", "tiger", "broken");
+// const tiger = new Hunter("boy", "tiger", "broken");
 
-zoo.addAnimal(tiger);
+// zoo.addAnimal(tiger);
 
-//zoo.listAnimals();
+// //zoo.listAnimals();
 
-zoo.markup();
+// zoo.markup();
