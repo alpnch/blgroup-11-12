@@ -59,3 +59,54 @@
 //   password.disabled = false;
 //   button.textContent = `login`;
 // }
+
+// ЗАДАЧА 2
+
+// Створи перелік справ.
+// Є інпут, в який вводиться назва завдання.
+// Після натискання на кнопку "Додати" завдання додається до списку #list.
+// Поруч із кожним завданням знаходиться кнопка "Видалити", щоб можна було
+// Забрати завдання зі списку.
+// Список із завданнями має бути доступним після перезавантаження сторінки.
+
+const form = document.getElementById("task-form");
+
+const taskList = document.getElementById("task-list");
+
+const input = document.querySelector("input");
+
+const tasksKey = "tasks";
+
+let tasks = JSON.parse(localStorage.getItem(tasksKey)) || [];
+// const taskSave = JSON.parse(localStorage.getItem(tasksKey));
+// if (taskSave) {
+// renderTasks();
+// }
+renderTasks();
+form.addEventListener("submit", addList);
+
+function addList(e) {
+  e.preventDefault();
+  const task = input.value;
+  if (task) {
+    tasks.push(task);
+    renderTasks();
+    saveTasks();
+    input.value = "";
+    console.log(tasks);
+  }
+}
+
+function renderTasks() {
+  taskList.innerHTML = "";
+  tasks.forEach((task) => {
+    const li = document.createElement("li");
+    li.textContent = task;
+    console.log(task);
+    taskList.appendChild(li);
+  });
+}
+
+function saveTasks() {
+  localStorage.setItem(tasksKey, JSON.stringify(tasks));
+}
